@@ -1,8 +1,9 @@
-import path from 'node:path';
+import express from 'express';
 
-// приклад для побудови шляху з його частин
-const somePath = path.join('some_folder', 'some_file.txt');
-// somePath буде 'some_folder/some_file.txt' на MacOs
+const app = express();
 
-// somePath буде 'some_folder\\some_file.txt' на Windows
-console.log(somePath);
+const PORT = 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
