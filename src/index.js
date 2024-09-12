@@ -1,8 +1,17 @@
+import pino from 'pino-http';
 import express from 'express';
 
 const app = express();
 
 const PORT = 3000;
+
+app.use(
+  pino({
+    transport: {
+      target: 'pino-pretty',
+    },
+  }),
+);
 
 // Middleware для логування часу запиту
 app.use((req, res, next) => {
