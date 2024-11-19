@@ -8,7 +8,9 @@ const dataValidate = {
   avgMark: 10.2,
 };
 
-const validationResult = createStudentSchema.validate(dataValidate);
+const validationResult = createStudentSchema.validate(dataValidate, {
+  abortEarly: false,
+});
 if (validationResult.error) {
   console.error(validationResult.error.message);
 } else {
